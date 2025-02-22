@@ -28,7 +28,7 @@ public class IngredientTest {
         ingredient = new Ingredient(type, name, price);
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Type: {0}, Name: {1}, Price: {2}")
     public static Object[][] setIngredient() {
         return new Object[][]{
                 {SAUCE, "T", 1},
@@ -41,18 +41,18 @@ public class IngredientTest {
     @Test
     public void testGetName() {
         String actualName = ingredient.getName();
-        Assert.assertEquals(actualName, name);
+        Assert.assertEquals("Incorrect name", actualName, name);
     }
 
     @Test
     public void testGetPrice() {
-        float actualPrice = ingredient.getPrice();
-        Assert.assertEquals(actualPrice, price, 0.0);
+        float actualPrice = Float.parseFloat(ingredient.getPrice().toString());
+        Assert.assertEquals("Incorrect price", actualPrice, price, 0.0);
     }
 
     @Test
     public void testIngredientType() {
         IngredientType actualIngredientType = ingredient.getType();
-        Assert.assertEquals(actualIngredientType, type);
+        Assert.assertEquals("Incorrect type", actualIngredientType, type);
     }
 }

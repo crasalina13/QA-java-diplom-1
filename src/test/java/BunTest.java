@@ -22,7 +22,7 @@ public class BunTest {
         bun = new Bun(name, price);
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Name: {0}, Price: {1}")
     public static Object[][] setBun() {
         return new Object[][]{
                 {"T", 1},

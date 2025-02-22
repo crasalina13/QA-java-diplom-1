@@ -19,7 +19,7 @@ public class IngredientTypeTest {
     }
 
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Type: {0}")
     public static Object[][] setIngredient() {
         return new Object[][]{
                 {"SAUCE", SAUCE},
